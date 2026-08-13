@@ -65,7 +65,16 @@
   {{- end }}
   {{- if not (.Param "hideMeta") }}
   <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
+    <div class="entry-meta">
+      {{- partial "post_meta.html" . -}}
+    </div>
+    {{- with (first 3 (.GetTerms "tags")) }}
+    <ul class="entry-tags" aria-label="Tags">
+      {{- range . }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
   </footer>
   {{- end }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>

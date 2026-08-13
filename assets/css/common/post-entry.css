@@ -70,6 +70,41 @@
 .entry-footer {
     color: var(--secondary);
     font-size: 13px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+}
+
+.entry-meta {
+    flex-shrink: 0;
+}
+
+.entry-tags {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-inline-start: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.entry-tags a {
+    display: block;
+    padding: 2px 8px;
+    color: var(--secondary);
+    background: var(--tertiary);
+    border-radius: 6px;
+    line-height: 1.5;
+    transition: color 0.1s, background 0.1s;
+}
+
+.entry-tags a:hover {
+    color: var(--primary);
+    background: var(--code-bg);
 }
 
 .entry-link {
